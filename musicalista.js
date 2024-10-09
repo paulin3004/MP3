@@ -20,6 +20,8 @@
 const audio = document.getElementById("audio")
 const nome = document.getElementById('name')
 const buttonplay = document.getElementById('btplay')
+const buttonback = document.getElementById('btprevious')
+const buttonnext = document.getElementById('btnext')
 
 const tempoagora = document.getElementById('currentime')
 const tempototal = document.getElementById('tempototal')
@@ -59,6 +61,10 @@ function mudaetoca(){
     
 }
 function voltar(){
+    buttonback.setAttribute("style", "scale:0.7;")
+    setTimeout(function(){
+        buttonback.setAttribute("style", "scale:1;")
+    }, 100)
     if(index == 0){
         index = musicas.length - 1
         mudaetoca()
@@ -69,6 +75,10 @@ function voltar(){
 }
 
 function proxima(){
+    buttonnext.setAttribute("style", "scale:0.7;")
+    setTimeout(function(){
+        buttonnext.setAttribute("style", "scale:1;")
+    }, 100)
     if(index < musicas.length - 1){
        index = index + 1
        mudaetoca()
